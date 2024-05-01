@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Second Page</title>
+  <style>
+    /* Your CSS styles for the table */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <h2>Personal Information</h2>
+  
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Age</th>
+    </tr>
+    <tbody id="infoTableBody">
+      <!-- Table body will be dynamically populated with JavaScript -->
+    </tbody>
+  </table>
+
+  <script>
+    // Retrieve data from localStorage and display it in a table
+    const storedData = [
+      {
+        name: localStorage.getItem('name'),
+        email: localStorage.getItem('email'),
+        age: localStorage.getItem('age')
+      }
+    ];
+
+    const infoTableBody = document.getElementById('infoTableBody');
+
+    // Loop through the stored data and create table rows
+    storedData.forEach(data => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${data.name}</td>
+        <td>${data.email}</td>
+        <td>${data.age}</td>
+      `;
+      infoTableBody.appendChild(row);
+    });
+    
+    // Clear localStorage to reset the data (optional)
+    // localStorage.clear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+1. To install google app engien create "hello world" app and othe web applications using python and java.
+
+Tools requrired:-
+	JDK
+	eclips
+	Google plug in's
+	
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
